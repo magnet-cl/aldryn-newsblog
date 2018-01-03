@@ -10,9 +10,9 @@ from aldryn_newsblog.feeds import LatestArticlesFeed, TagFeed, CategoryFeed
 urlpatterns = [
     url(r'^$',
         ArticleList.as_view(), name='article-list'),
-    url(_(r'^feed/$)', LatestArticlesFeed(), name='article-list-feed'),
+    url(_(r'^feed/$'), LatestArticlesFeed(), name='article-list-feed'),
 
-    url(_(r'^search/$)',
+    url(_(r'^search/$'),
         ArticleSearchResultsList.as_view(), name='article-search'),
 
     url(r'^(?P<year>\d{4})/$',
@@ -43,14 +43,14 @@ urlpatterns = [
     url(_(r'^author/(?P<author>\w[-\w]*)/$)',
         AuthorArticleList.as_view(), name='article-list-by-author'),
 
-    url(_(r'^category/(?P<category>\w[-\w]*)/$)',
+    url(_(r'^category/(?P<category>\w[-\w]*)/$'),
         CategoryArticleList.as_view(), name='article-list-by-category'),
-    url(_(r'^category/(?P<category>\w[-\w]*)/feed/$)',
+    url(_(r'^category/(?P<category>\w[-\w]*)/feed/$'),
         CategoryFeed(), name='article-list-by-category-feed'),
 
-    url(_(r'^tag/(?P<tag>\w[-\w]*)/$)',
+    url(_(r'^tag/(?P<tag>\w[-\w]*)/$'),
         TagArticleList.as_view(), name='article-list-by-tag'),
-    url(_(r'^tag/(?P<tag>\w[-\w]*)/feed/$)',
+    url(_(r'^tag/(?P<tag>\w[-\w]*)/feed/$'),
         TagFeed(), name='article-list-by-tag-feed'),
 
 ]
