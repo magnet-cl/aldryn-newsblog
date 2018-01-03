@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<slug>\w[-\w]*)/$',  # flake8: NOQA
         ArticleDetail.as_view(), name='article-detail'),
 
-    url(_(r'^author/(?P<author>\w[-\w]*)/$)',
+    url(_(r'^author/(?P<author>\w[-\w]*)/$'),
         AuthorArticleList.as_view(), name='article-list-by-author'),
 
     url(_(r'^category/(?P<category>\w[-\w]*)/$'),
